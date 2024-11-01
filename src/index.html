@@ -7,20 +7,20 @@
     <link href="./output.css" rel="stylesheet">
 
 </head>
-<body class="flex justify-center items-center bg-slate-800 h-screen"   >
+<body class="flex justify-center items-center h-screen bg-gradient-to-r from-blue-200 to-cyan-200">
     <div class="flex flex-col justify-center items-center ">
     
-        <h1 class="font-bold mb-10 md:mb-20 text-slate-200 text-[45px] text-center">Calculate Your Etsy profit Now!</h1>
+        <h1 class="font-bold mb-10 md:mb-20 bg-gradient-to-r from-slate-900 to-slate-700 text-[45px] text-center inline-block text-transparent bg-clip-text">Calculate Your <span class="bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text"> Etsy </span> Fees Now!</h1>
     
     <div class="flex justify-center items-center ">
-        <input type='number' id="listing_price" placeholder="Enter your listing price " class="h-10 md:h-20 mr-4 rounded-full" >
-        <button onclick={Calculate()} class="bg-blue-700 p-2 rounded-full text-2xl h-10 w-10  flex justify-center items-center ">
+        <input type='number' id="listing_price" placeholder="Enter your listing price " class=" mr-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+        <button onclick={Calculate()} class="bg-white p-2 rounded-full text-2xl h-10 w-10  flex justify-center items-center ">
             🖩
         </button>
       </div>  
 
   
-        <p id="answer" class="text-lg text-white mt-10 ">
+        <p id="answer" class="text-lg text-slate-800 mt-10 ">
 
         </p>
     </div>
@@ -55,7 +55,7 @@
     let total_fees = transaction_fee + listing_fee + processing_fee_total + regulatory_fee + vat_fee + state_fee;
     
     // Display the result
-    document.getElementById("answer").innerHTML = total_fees.toFixed(2); // Format to 2 decimal places
+    document.getElementById("answer").innerHTML = total_fees.toFixed(2) + "$"; // Format to 2 decimal places
 }
 
     </script>
