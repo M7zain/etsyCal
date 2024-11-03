@@ -1,3 +1,15 @@
+async function fetchUSDtoTRY() {
+    const res = await fetch("https://open.er-api.com/v6/latest/USD"); 
+    const data = await res.json(); 
+    const exchangeRate = data.rates.TRY; 
+
+    console.log(`The exchange rate of USD over TRY is : ${exchangeRate}`)
+
+    return exchangeRate; 
+}
+
+fetchUSDtoTRY(); 
+
 function Calculate() { 
     // Get listing price from input and parse it as a number
     let listing_price = document.getElementById("listing_price").value;
@@ -27,4 +39,18 @@ function Calculate() {
     
     // Display the result
     document.getElementById("answer").innerHTML = total_fees.toFixed(2) + "$"; // Format to 2 decimal places
+}
+
+
+function toggleInput(){ 
+    const checkbox = document.getElementById("printify"); 
+    const printify_price = document.getElementById("printify_price"); 
+
+    if(checkbox.checked){ 
+        printify_price.style.display= "block"; 
+
+    }else{ 
+        printify_price.style.display ="none"; 
+    }
+
 }
