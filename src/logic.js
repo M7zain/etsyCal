@@ -3,14 +3,28 @@ async function fetchUSDtoTRY() {
     const data = await res.json(); 
     const exchangeRate = data.rates.TRY; 
 
-    console.log(`The exchange rate of USD over TRY is : ${exchangeRate}`)
+    // check if it returns exchange rate correctly
+    // console.log(`The exchange rate of USD over TRY is : ${exchangeRate}`)
 
     return exchangeRate; 
 }
 
-fetchUSDtoTRY(); 
 
-function Calculate() { 
+async function Calculate() { 
+
+    let exchangeRate; 
+
+    try{
+         exchangeRate = await fetchUSDtoTRY(); 
+
+    }
+    catch(error){ 
+        document.getElementById("answer").value = "couldn't fetch exchange rate!! ";
+        return; 
+    }
+
+
+
     // Get listing price from input and parse it as a number
     let listing_price = document.getElementById("listing_price").value;
     
@@ -38,7 +52,7 @@ function Calculate() {
     let total_fees = transaction_fee + listing_fee + processing_fee_total + regulatory_fee + vat_fee + state_fee;
     
     // Display the result
-    document.getElementById("answer").innerHTML = total_fees.toFixed(2) + "$"; // Format to 2 decimal places
+    document.getElementById("answer").innerHTML = ( total_fees) + "$"; // Format to 2 decimal places
 }
 
 
