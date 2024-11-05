@@ -29,7 +29,7 @@
 
             <div class="flex justify-center items-center ">
                 <input type='number' id="listing_price" placeholder="Enter your listing price " class=" mr-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
-                <button onclick={Calculate()} class="bg-white p-2 rounded-full text-2xl h-10 w-10  flex justify-center items-center ">
+                <button onclick={CalculateFees()} class="bg-white p-2 rounded-full text-2xl h-10 w-10  flex justify-center items-center ">
                     🖩
                 </button>
               </div> 
@@ -37,6 +37,8 @@
 
   
         <p id="answer" class="text-lg text-slate-800 mt-10 ">
+        </p>
+        <p id="profit" class="text-lg text-slate-800 mt-10 ">
 
         </p>
     </div>
